@@ -1,6 +1,9 @@
 
     public class MiniIteracionXP {
 
+        private static final double ENVIO_NORMAL = 100.0;
+        private static final double ENVIO_REDUCIDO = 50.0;
+        private static final double ENVIO_GRATIS = 0.0;
 
             public static void main(String[] args) {
                 ejecutarPruebas();
@@ -8,14 +11,14 @@
 
         public static double calcularCostoEnvio(double importePedido) {
             if (importePedido >= 1000.0) {
-                return 0.0;
+                return ENVIO_GRATIS;
             }
 
             if (importePedido >= 500.0) {
-                return 50.0;
+                return ENVIO_REDUCIDO;
             }
 
-            return 100.0;
+            return ENVIO_NORMAL;
         }
 
             private static void ejecutarPruebas() {
